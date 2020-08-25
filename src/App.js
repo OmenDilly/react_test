@@ -1,10 +1,28 @@
-import React, { memo, useState, useCallback } from 'react'
+import React, { memo, useState, useMemo } from 'react'
+import { UserDataContext } from './components/UserDataContext'
+import Form from './components/Form'
+import './styles/index.css'
 
 const App = () => {
+
+    const [userData, setUserData] = useState({
+        name: 'Дмитрий',
+        status: '',
+        password: '',
+        confirmPassword: '',
+        email: '',
+        agree: true, 
+        city: localStorage.getItem('city')
+    })
+
+    const ContextValue = useMemo(() => ({userData, setUserData}), [userData, setUserData])
+
     return (
-        <div className='main__container'>
-            hello
-        </div>
+        <UserDataContext.Provider value={ContextValue}>
+            <div className='main__container'>
+                <Form/>
+            </div>
+        </UserDataContext.Provider>
     )
 }
 

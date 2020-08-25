@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.main__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 10fr 1fr;
+      grid-template-rows: 1fr 10fr 1fr;
+  -ms-grid-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 10fr 1fr;
+  height: 100vh;
+}
+
+.main__container .form {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 32px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main__container .form hr {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-top: 0px solid #999999;
+}
+
+.main__container .form .header__contaimner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+.main__container .form .header__contaimner .change__status {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.main__container .form .header__contaimner .header {
+  font-size: 1.875em;
+  font-weight: bold;
+}
+
+.main__container .form .header__contaimner .header .header__greet {
+  color: #666666;
+}
+
+.main__container .form .header__contaimner .status__container {
+  background-color: #e6e6e6;
+}
+
+.main__container .form .button__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+}
+
+.main__container .form .button__container .wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-columns: minmax(130px, 130px) 1fr;
+      grid-template-columns: minmax(130px, 130px) 1fr;
+  grid-gap: 18px;
+}
+
+.main__container .form .button__container .wrapper input[type='submit'] {
+  cursor: pointer;
+  font-size: 112.5%;
+  background-color: #71C838;
+  border: none;
+  color: white;
+  max-height: 41px;
+  padding: 10px 20px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.main__container .form .button__container .wrapper input[type='submit']:hover {
+  background-color: #8ed360;
+}
+
+.main__container .form .button__container .wrapper input[type='submit']:disabled {
+  background-color: #999999;
+  cursor: initial;
+}
+
+.main__container .form .button__container .wrapper span {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #999999;
+}
+
+.main__container .form .input__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  grid-gap: 5px;
+  font-size: 131.25%;
+}
+
+.main__container .form .input__container label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main__container .form .input__container .active__area {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(100px, 335px) 1fr;
+      grid-template-columns: minmax(100px, 335px) 1fr;
+  grid-gap: 18px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__container .form .input__container .active__area[type='checkbox'] {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 13px auto;
+      grid-template-columns: 13px auto;
+}
+
+.main__container .form .input__container .active__area[type='checkbox'] span {
+  color: #000000;
+}
+
+.main__container .form .input__container .active__area input[type] {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-height: 40px;
+  padding: 10px;
+  font-size: 21px;
+  max-width: 335px;
+  border: 1px solid #999999;
+}
+
+.main__container .form .input__container .active__area span {
+  font-size: 75%;
+  color: #999999;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,mBAAmB,CAAC;EAChB,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,OAAO;EAE9B,kBAAkB,EAAE,cAAc;CAUoB;;AAd1D,AAKI,mBALe,CAKf,eAAe,CAAC;EACZ,UAAU,EAAE,GAAG;EACf,YAAY,EAAE,GAAG;CAAG;;AAP5B,AAQI,mBARe,CAQf,OAAO,CAAC;EACJ,SAAS,EAAE,OAAO;EAClB,WAAW,EAAE,IAAI;CAEyB;;AAZlD,AAWQ,mBAXW,CAQf,OAAO,CAGH,cAAc,CAAC;EACX,KAAK,EAAE,OAA0B;CAAG;;AAZhD,AAaI,mBAbe,CAaf,kBAAkB,CAAC;EACf,gBAAgB,EAAE,OAA2B;CAAG",
+    "sources": [
+        "header.sass",
+        "vars.sass"
+    ],
+    "names": [],
+    "file": "header.css"
+}

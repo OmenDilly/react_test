@@ -1,0 +1,53 @@
+.input__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  grid-gap: 5px;
+  font-size: 131.25%;
+}
+
+.input__container label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.input__container .active__area {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(100px, 335px) 1fr;
+      grid-template-columns: minmax(100px, 335px) 1fr;
+  grid-gap: 18px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input__container .active__area[type='checkbox'] {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 13px auto;
+      grid-template-columns: 13px auto;
+}
+
+.input__container .active__area[type='checkbox'] span {
+  color: #000000;
+}
+
+.input__container .active__area input[type] {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-height: 40px;
+  padding: 10px;
+  font-size: 21px;
+  max-width: 335px;
+  border: 1px solid #999999;
+}
+
+.input__container .active__area span {
+  font-size: 75%;
+  color: #999999;
+}
+/*# sourceMappingURL=input.css.map */
