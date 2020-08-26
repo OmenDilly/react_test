@@ -7,7 +7,7 @@ const App = () => {
 
     const [userData, setUserData] = useState({
         name: 'Дмитрий',
-        status: '',
+        status: 'Прежде чем действовать, надо понять',
         password: '',
         confirmPassword: '',
         email: '',

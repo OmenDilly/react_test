@@ -2,16 +2,39 @@
 
 .header__contaimner
     display: grid
-    grid-template-columns: 1fr 3fr 
-    // grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: 1fr 1.5fr 1.5fr
     grid-template-rows: repeat(2, 1fr)
+    grid-gap: 10px
     .change__status
         align-self: end
-        justify-self: end
+        justify-self: start
+        grid-column: 3
+        color: $secondary
+        cursor: pointer
+        text-decoration: underline
+
     .header
-        font-size: 1.875em
+        // font-size: 30px
+        grid-column: span 2
+        align-self: end
         font-weight: bold
         .header__greet
             color: darken($textSecondary, 20)
-    .status__container
+            font-size: 1.875em
+        .header__name
+            font-size: 1.875em
+    input[type="text"]
+        &:disabled
+            color: lighten($textPrimary, 20)
+            border: none
+
+        font-size: 87.5%
+        padding: 0 12px
+        grid-column: span 3
+        justify-self: center
+        width: 100%   
+        max-width: 500px
+        min-height: 50px
         background-color: lighten($textSecondary, 30)
+        align-self: center
+

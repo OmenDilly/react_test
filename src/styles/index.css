@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  font-size: 16px;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -41,31 +42,87 @@
 .main__container .form .header__contaimner {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
+  -ms-grid-columns: 1fr 1.5fr 1.5fr;
+      grid-template-columns: 1fr 1.5fr 1.5fr;
   -ms-grid-rows: (1fr)[2];
       grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
 }
 
 .main__container .form .header__contaimner .change__status {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
-  -ms-grid-column-align: end;
-      justify-self: end;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  color: #0C77BB;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .main__container .form .header__contaimner .header {
-  font-size: 1.875em;
+  grid-column: span 2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
   font-weight: bold;
 }
 
 .main__container .form .header__contaimner .header .header__greet {
   color: #666666;
+  font-size: 1.875em;
 }
 
-.main__container .form .header__contaimner .status__container {
+.main__container .form .header__contaimner .header .header__name {
+  font-size: 1.875em;
+}
+
+.main__container .form .header__contaimner input[type="text"] {
+  font-size: 87.5%;
+  padding: 0 12px;
+  grid-column: span 3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 100%;
+  max-width: 500px;
+  min-height: 50px;
   background-color: #e6e6e6;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main__container .form .header__contaimner input[type="text"]:disabled {
+  color: #333333;
+  border: none;
+}
+
+.main__container .form .select__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  grid-gap: 5px;
+  font-size: 131.25%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__container .form .select__container .select__box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(100px, 335px) 1fr;
+      grid-template-columns: minmax(100px, 335px) 1fr;
+}
+
+.main__container .form .select__container .select__box select {
+  padding: 10px;
+  max-width: 335px;
+  border: 1px solid #999999;
+  max-height: 40px;
 }
 
 .main__container .form .button__container {
@@ -156,7 +213,6 @@
       align-self: center;
   max-height: 40px;
   padding: 10px;
-  font-size: 21px;
   max-width: 335px;
   border: 1px solid #999999;
 }

@@ -1,0 +1,26 @@
+.select__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  grid-gap: 5px;
+  font-size: 131.25%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.select__container .select__box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(100px, 335px) 1fr;
+      grid-template-columns: minmax(100px, 335px) 1fr;
+}
+
+.select__container .select__box select {
+  padding: 10px;
+  max-width: 335px;
+  border: 1px solid #999999;
+  max-height: 40px;
+}
+/*# sourceMappingURL=select.css.map */
