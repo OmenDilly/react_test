@@ -15,7 +15,13 @@ const App = () => {
         city: localStorage.getItem('city')
     })
 
-    const ContextValue = useMemo(() => ({userData, setUserData}), [userData, setUserData])
+    const [errs, setErrs] = useState({
+        pass: '',
+        email: '',
+        confPass: ''
+    })
+
+    const ContextValue = useMemo(() => ({userData, setUserData, errs, setErrs}), [userData, setUserData])
 
     return (
         <UserDataContext.Provider value={ContextValue}>

@@ -24,6 +24,10 @@
           align-items: center;
 }
 
+.input__container .active__area .err {
+  color: #FF0000;
+}
+
 .input__container .active__area[type='checkbox'] {
   display: -ms-inline-grid;
   display: inline-grid;

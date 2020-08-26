@@ -7,7 +7,7 @@ import Header from './Header'
 
 const Form = () => {
 
-    const {userData} = useContext(UserDataContext)
+    const {errs} = useContext(UserDataContext)
 
     return (
         <form className='form' id='user__form'>
@@ -19,12 +19,14 @@ const Form = () => {
                 label='Пароль' 
                 helperText='Ваш новый пароль должен содержать не менее 5 символов' 
                 type='password'
+                error={errs.pass}
             />
             <TextField 
                 name='confirmPassword' 
                 label='Пароль еще раз' 
                 helperText='Повторите пароль, пожалуйста, это обезопасит вас с нами на случай ошибки'
                 type='password'
+                error={errs.confPass}
             />
             <hr/>
             <TextField 
@@ -32,6 +34,7 @@ const Form = () => {
                 label='Элеткронная почта' 
                 helperText='Повторите пароль, пожалуйста, это обезопасит вас с нами на случай ошибки'
                 type='email'
+                error={errs.email}
             />
             <TextField
                 name='agree'

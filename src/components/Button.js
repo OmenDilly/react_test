@@ -1,15 +1,28 @@
 import React, {useState, useContext, useEffect, memo} from 'react'
 import { UserDataContext } from './UserDataContext'
+const clearErrs = {
+    pass: '',
+    email: '',
+    confPass: ''
+}
 
 const Button = () => {
 
-    const {userData} = useContext(UserDataContext)
-
+    const {userData, errs, setErrs} = useContext(UserDataContext)
     const [date, setDate] = useState(localStorage.getItem('lastDate'))
     const [disabled, setDisabled] = useState(true)
 
     useEffect(() => {
         if (userData.password && userData.confirmPassword && userData.email) {
+            // if (userData.password.length < 5) {
+            //     setErrs({...errs, pass: 'используйте не менее 5 символов'})
+            // } else if (userData.confirmPassword !== userData.password) {
+            //     setErrs({...errs, confPass: 'Пароли не совпадают'})
+            // } else if (!userData.email.includes('@')) {
+            //     setErrs({...errs, email: 'Неверный email'})
+            // } else {
+            //     setErrs(clearErrs)
+            // }
             setDisabled(false)
         } else {
             setDisabled(true)
@@ -38,7 +51,7 @@ const Button = () => {
                     onClick={handleClick}
                 />
                 <span>
-                    {`последние изменения: ${date}`}
+                    { date &&`последние изменения: ${date}`}
                 </span>
             </div>
 
