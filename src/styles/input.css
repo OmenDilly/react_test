@@ -7,6 +7,13 @@
   font-size: 131.25%;
 }
 
+@media only screen and (max-width: 478px) {
+  .input__container {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 .input__container label {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -18,39 +25,44 @@
   display: grid;
   -ms-grid-columns: minmax(100px, 335px) 1fr;
       grid-template-columns: minmax(100px, 335px) 1fr;
-  grid-gap: 18px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 5px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .input__container .active__area {
+    grid-gap: 0;
+  }
 }
 
 .input__container .active__area .err {
   color: #FF0000;
 }
 
-.input__container .active__area[type='checkbox'] {
-  display: -ms-inline-grid;
-  display: inline-grid;
-  -ms-grid-columns: 13px auto;
-      grid-template-columns: 13px auto;
-}
-
-.input__container .active__area[type='checkbox'] span {
-  color: #000000;
-}
-
 .input__container .active__area input[type] {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   max-height: 40px;
   padding: 10px;
-  max-width: 335px;
   border: 1px solid #999999;
+}
+
+@media only screen and (max-width: 768px) {
+  .input__container .active__area input[type] {
+    grid-column: span 2;
+  }
 }
 
 .input__container .active__area span {
   font-size: 75%;
   color: #999999;
+}
+
+@media only screen and (max-width: 768px) {
+  .input__container .active__area .helper__text {
+    display: none;
+  }
 }
 /*# sourceMappingURL=input.css.map */

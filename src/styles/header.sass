@@ -1,23 +1,52 @@
 @import vars
+@import breakpoints
 
 .header__contaimner
     display: grid
     grid-template-columns: 1fr 1.5fr 1.5fr
     grid-template-rows: repeat(2, 1fr)
     grid-gap: 10px
-    .change__status
-        align-self: end
-        justify-self: start
-        grid-column: 3
-        color: $secondary
-        cursor: pointer
-        text-decoration: underline
-
+    @include breakpoints(tablet)
+        grid-template-columns: auto auto 30px
+    .edit__box
+        display: grid
+        .edit__icon
+            fill: $secondary
+            align-self: end
+            justify-self: end
+            width: 30px
+            height: 30px
+            cursor: pointer
+            display: none
+        .change__status
+            align-self: end
+            justify-self: start
+            color: $secondary
+            cursor: pointer
+            text-decoration: underline
+        @include breakpoints(tablet)
+            .edit__icon
+                display: block
+            .change__status
+                display: none
     .header
-        // font-size: 30px
         grid-column: span 2
         align-self: end
         font-weight: bold
+        position: relative
+        &::after
+            width: 0 
+            height: 0 
+            content: ''
+            display: block
+            position: absolute
+            bottom: -30% 
+            left: 50%
+            @include breakpoints(phone)
+                left: 20%
+            border-left: 10px solid transparent
+            border-right: 10px solid transparent
+            border-bottom: 10px solid lighten($textSecondary, 30)
         .header__greet
             color: darken($textSecondary, 20)
             font-size: 1.875em

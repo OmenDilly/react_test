@@ -5,6 +5,13 @@
       grid-template-columns: 1fr 3fr;
 }
 
+@media only screen and (max-width: 478px) {
+  .button__container {
+    -ms-grid-columns: 0;
+        grid-template-columns: 0;
+  }
+}
+
 .button__container .wrapper {
   display: -ms-grid;
   display: grid;
@@ -15,7 +22,14 @@
   grid-gap: 18px;
 }
 
-.button__container .wrapper input[type='submit'] {
+@media only screen and (max-width: 478px) {
+  .button__container .wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.button__container .wrapper input[type='reset'] {
   cursor: pointer;
   font-size: 112.5%;
   background-color: #71C838;
@@ -27,11 +41,15 @@
   transition: 0.2s all;
 }
 
-.button__container .wrapper input[type='submit']:hover {
+.button__container .wrapper input[type='reset']:active {
+  background-color: #5aa12c;
+}
+
+.button__container .wrapper input[type='reset']:hover {
   background-color: #8ed360;
 }
 
-.button__container .wrapper input[type='submit']:disabled {
+.button__container .wrapper input[type='reset']:disabled {
   background-color: #999999;
   cursor: initial;
 }

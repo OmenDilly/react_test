@@ -10,6 +10,13 @@
           align-items: center;
 }
 
+@media only screen and (max-width: 478px) {
+  .select__container {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 .select__container .select__box {
   display: -ms-grid;
   display: grid;
@@ -19,8 +26,13 @@
 
 .select__container .select__box select {
   padding: 10px;
-  max-width: 335px;
   border: 1px solid #999999;
   max-height: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .select__container .select__box select {
+    grid-column: span 2;
+  }
 }
 /*# sourceMappingURL=select.css.map */

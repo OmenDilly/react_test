@@ -3,16 +3,19 @@ import { UserDataContext } from './components/UserDataContext'
 import Form from './components/Form'
 import './styles/index.css'
 
+const localUserData = JSON.parse(localStorage.getItem('userData'))
+
 const App = () => {
 
     const [userData, setUserData] = useState({
-        name: 'Дмитрий',
-        status: 'Прежде чем действовать, надо понять',
+        name: localUserData.name || 'Дмитрий',
+        status: localUserData.status || 'Прежде чем действовать, надо понять',
         password: '',
         confirmPassword: '',
-        email: '',
-        agree: true, 
-        city: localStorage.getItem('city')
+        email: localUserData.email || '',
+        agree: false, 
+        city: localUserData.city,
+        editDate: localUserData.editDate
     })
 
     const [errs, setErrs] = useState({
@@ -21,7 +24,7 @@ const App = () => {
         confPass: ''
     })
 
-    const ContextValue = useMemo(() => ({userData, setUserData, errs, setErrs}), [userData, setUserData])
+    const ContextValue = useMemo(() => ({userData, setUserData, errs, setErrs}), [userData, setUserData, errs])
 
     return (
         <UserDataContext.Provider value={ContextValue}>

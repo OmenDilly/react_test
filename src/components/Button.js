@@ -8,34 +8,30 @@ const clearErrs = {
 
 const Button = () => {
 
-    const {userData, errs, setErrs} = useContext(UserDataContext)
+    const {userData, errs, setErrs, setUserData} = useContext(UserDataContext)
     const [date, setDate] = useState(localStorage.getItem('lastDate'))
     const [disabled, setDisabled] = useState(true)
 
     useEffect(() => {
-        if (userData.password && userData.confirmPassword && userData.email) {
-            // if (userData.password.length < 5) {
-            //     setErrs({...errs, pass: 'используйте не менее 5 символов'})
-            // } else if (userData.confirmPassword !== userData.password) {
-            //     setErrs({...errs, confPass: 'Пароли не совпадают'})
-            // } else if (!userData.email.includes('@')) {
-            //     setErrs({...errs, email: 'Неверный email'})
-            // } else {
-            //     setErrs(clearErrs)
-            // }
+        if (userData.password && userData.confirmPassword && userData.email && !errs.pass && !errs.confPass && !errs.email) {
             setDisabled(false)
         } else {
             setDisabled(true)
         }
         
-    }, [userData])
+    }, [userData, errs])
     
     const handleClick = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         const date = (new Date()).toLocaleString('ru', {hour: '2-digit', minute: '2-digit', second: '2-digit', year: 'numeric', month: 'long', day: 'numeric'}).replace('г.,', 'в')
-        setDate(date)
-        localStorage.setItem('lastDate', date)
-        localStorage.setItem('city', userData.city)
+        setUserData({...userData, editDate: date})
+        localStorage.setItem('userData', JSON.stringify({
+            name: userData.name, 
+            status: userData.status, 
+            email: userData.email, 
+            city: userData.city, 
+            editDate: date
+        }))
         console.log(JSON.stringify(userData))
     }
 
@@ -45,13 +41,13 @@ const Button = () => {
                 <input 
                     
                     disabled={disabled}
-                    type="submit" 
+                    type="reset" 
                     className="sumbit" 
                     value="Изменить"
                     onClick={handleClick}
                 />
                 <span>
-                    { date &&`последние изменения: ${date}`}
+                    { userData.editDate &&`последние изменения: ${userData.editDate}`}
                 </span>
             </div>
 

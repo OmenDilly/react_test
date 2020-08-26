@@ -2,8 +2,8 @@ import React, { memo, useContext } from 'react'
 import { UserDataContext } from './UserDataContext'
 const cities = (require('../cities.json')).filter(city => city.population > 50000)
 const mostPop = Math.max.apply(Math, cities.map((city) => { return city.population; }))
-const largCity = cities.filter((city) => city.population == mostPop)
-console.log(largCity)
+const largCity = cities.filter((city) => city.population === mostPop.toString())
+
 const Select = () => {
 
     const {userData, setUserData} = useContext(UserDataContext)

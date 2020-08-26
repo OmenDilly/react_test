@@ -1,0 +1,7 @@
+@mixin breakpoints($breakpoint)
+    @if $breakpoint == tablet
+        @media only screen and (max-width: 768px)
+            @content
+    @if $breakpoint == phone
+        @media only screen and (max-width: 478px)
+            @content

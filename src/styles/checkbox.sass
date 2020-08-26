@@ -1,0 +1,19 @@
+@import breakpoints
+
+.checkbox__container
+    display: grid
+    grid-template-columns: 1fr 1.5fr 1.5fr
+    align-items: center
+    grid-gap: 5px
+    @include breakpoints(phone)
+        grid-template-columns: 0
+        label
+            display: none
+    .active__area
+        grid-column: span 2
+        display: grid
+        grid-template-columns: 13px auto
+        align-items: center
+        grid-column-gap: 10px
+        input[type='checkbox']
+            
